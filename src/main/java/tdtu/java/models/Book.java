@@ -64,10 +64,10 @@ public class Book {
 		this.lang = lang;
 	}
 	public int getAuthor_id() {
-		return author_id;
+		return authorId;
 	}
 	public void setAuthor_id(int author_id) {
-		this.author_id = author_id;
+		this.authorId = author_id;
 	}
 	public String getDesc() {
 		return desc;
