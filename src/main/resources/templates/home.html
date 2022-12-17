@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -67,6 +66,18 @@
                             </div>
                         </div>
                     </div>
+					<th:block th:each = "book : ${book}">
+						<div class="col-3 mt-2 ">
+                        <div class="card ">
+                            <img class=" card-img-top" th:src="${book.getImg()}" alt="Card image" style="width:100%">
+                            <div class="card-body">
+                                <h4 class="card-title" th:text="${book.getName()}" ></h4>
+                                <p class="card-text" th:text="${book.getDesc()}">Sơ lược về sách aaaaaaaaaaaaaaaaaaaaaaaaaaaaa</p>
+                                <a href="#" class="btn btn-primary">See Profile</a>
+                            </div>
+                        </div>
+                    </div>
+					</th:block>	
                 </div>
             </div>
         </div>

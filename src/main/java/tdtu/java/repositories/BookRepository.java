@@ -7,5 +7,5 @@ import tdtu.java.models.Book;
 
 @Repository("bookRepository")
 public interface BookRepository extends CrudRepository<Book, Integer> {
-	Book findById(int Id);
+	
 }
