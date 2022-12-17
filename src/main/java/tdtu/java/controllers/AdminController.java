@@ -15,7 +15,7 @@ public class AdminController {
 	@Autowired
 	private UserService userService;
 	
-	@GetMapping("")
+	@GetMapping({"","/user"})
 	public String getAuthor(ModelMap model) {
 		model.put("user",userService.findByRole("user"));
 		
