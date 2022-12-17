@@ -16,4 +16,18 @@ public class UserServiceImpl implements UserService {
 	public User createUser(User user) {
 		return userRepository.save(user);
 	}
+	@Override
+	public String getRoleFromLogin(String username,String password) {
+		User user = userRepository.findByUsernameAndPassword(username, password);
+		if(user!=null) {
+			return user.getRole();
+		}else {
+			return null;
+		}
+	}
+	@Override
+	public User getUserByUsername(String username) {
+		
+		return userRepository.findByUsername(username);
+	}
 }

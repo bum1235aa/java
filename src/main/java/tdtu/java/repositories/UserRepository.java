@@ -6,5 +6,6 @@ import org.springframework.stereotype.Repository;
 import tdtu.java.models.User;
 @Repository("userRepository")
 public interface UserRepository extends JpaRepository<User, Integer> {
-	User findByUsername(String Username);
+	User findByUsernameAndPassword(String username,String password);
+	User findByUsername(String username);
 }
