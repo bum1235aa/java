@@ -31,11 +31,12 @@ public class BookController {
 	@PostMapping("/signin")
 	public String signin(@RequestParam(name="username") String username,@RequestParam(name="password") String password,Model model) {
 		String role = userService.getRoleFromLogin(username, password);
+		System.out.print(role);
 		if(role==null) {
 			
-			return "login";
+			return "redirect:/";
 		}else if(role == "admin") {
-			return "";
+			return "/admin/";
 		}
 		else{
 			model.addAttribute("user",userService.getUserByUsername(username));
@@ -51,10 +52,10 @@ public class BookController {
 		System.out.print(user.getPassword());
 		User data = userService.createUser(user);
 		if(data!=null) {
-			return "login";
+			return "redirect:/login";
 		}
 		else {
-			return "register";
+			return "redirect:/register";
 		}
 	}
 	@GetMapping("/register")

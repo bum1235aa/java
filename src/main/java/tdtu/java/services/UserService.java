@@ -1,5 +1,7 @@
 package tdtu.java.services;
 
+import java.util.List;
+
 import tdtu.java.models.User;
 
 public interface UserService {
@@ -8,5 +10,7 @@ public interface UserService {
 	public String getRoleFromLogin(String username, String password);
 	
 	public User getUserByUsername(String username);
-
+	
+	public List<User> findByRole(String role);
+ 
 }
