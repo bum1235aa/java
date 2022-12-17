@@ -9,13 +9,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import tdtu.java.services.UserService;
 
 @Controller
-@RequestMapping("/admin/")
+@RequestMapping("/admin")
 public class AdminController {
 	
 	@Autowired
 	private UserService userService;
 	
-	@GetMapping("/")
+	@GetMapping("")
 	public String getAuthor(ModelMap model) {
 		model.put("user",userService.findByRole("user"));
 		

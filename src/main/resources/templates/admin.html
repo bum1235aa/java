@@ -99,16 +99,18 @@
             </tr>
           </thead>
           <tbody>
-			  <tr>
+			  
         	    <th:block th:each="user : ${user} ">
-					<td th:text="${user.getId()}"></td>
-					<td th:text="${user.getName()}"></td>
-					<td th:text="${user.getphone()}"></td>
-					<td th:text="${user.getRole()}"></td>
-					<td th:text="${user.getGender()}"></td>
-					<td th:text="${user.getId()}"></td>
+					<tr scope="row" >
+						<td th:text="${user.getId()}"></td>
+						<td th:text="${user.getName()}"></td>
+						<td th:text="${user.getNumber()}"></td>
+						<td th:text="${user.getRole()}"></td>
+						<td th:text="${user.getGender()}"></td>
+						<td th:text="${user.getId()}"></td>
+					</tr>
 				</th:block>
-			</tr>
+			
           </tbody>
         </table>
       </div>
