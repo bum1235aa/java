@@ -36,7 +36,7 @@
     height:100%;
 }
 html,body{
-    background-image: url('./img/lib.jpg');
+    background-image: url('/img/lib.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     height: 100%;

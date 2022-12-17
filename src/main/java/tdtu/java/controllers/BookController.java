@@ -15,13 +15,18 @@ public class BookController {
 	@Autowired
 	private BookService bookService;
 	
-//	@GetMapping("/")
-//	public String index(ModelMap modelMap) {
-//		modelMap.put("book",bookService.findAll());
-//		return "Book";
-//	}
-	@RequestMapping("/")
-	public String bookPage() {
+
+	@GetMapping("/")
+	public String bookPage(ModelMap modelMap) {
+		modelMap.put("book",bookService.findAll());
 		return "home";
+	}
+	@GetMapping("/login")
+	public String loginPage() {
+		return "login";
+	}
+	@GetMapping("/register")
+	public String registerPage() {
+		return "register";
 	}
 }
