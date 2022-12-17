@@ -18,7 +18,6 @@ public class AdminController {
 	@GetMapping({"","/user"})
 	public String getAuthor(ModelMap model) {
 		model.put("user",userService.findByRole("user"));
-		
 		return "admin";
 	}
 }
