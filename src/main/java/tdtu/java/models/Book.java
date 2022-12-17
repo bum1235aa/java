@@ -1,5 +1,6 @@
 package tdtu.java.models;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -11,15 +12,26 @@ import jakarta.persistence.Table;
 public class Book {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name="bookid")
 	private String id;
-	private String name;
-	private String img;
-	private int releadsedYear;
-	private String lang;
-
-	private int categoty_id;
-	private int author_id;
 	
+	@Column(name="bookname")
+	private String name;
+	
+	@Column(name="bookcover")
+	private String img;
+	
+	@Column(name="releasedyear")
+	private int releadsedYear;
+	
+	@Column(name="originallanguage")
+	private String lang;
+	
+	@Column(name="authorid")
+	private int authorId;
+	
+	@Column(name="description")
+	private String desc;
 	
 	public String getId() {
 		return id;
@@ -51,17 +63,17 @@ public class Book {
 	public void setLang(String lang) {
 		this.lang = lang;
 	}
-	public int getCategoty_id() {
-		return categoty_id;
-	}
-	public void setCategoty_id(int categoty_id) {
-		this.categoty_id = categoty_id;
-	}
 	public int getAuthor_id() {
 		return author_id;
 	}
 	public void setAuthor_id(int author_id) {
 		this.author_id = author_id;
+	}
+	public String getDesc() {
+		return desc;
+	}
+	public void setDesc(String desc) {
+		this.desc = desc;
 	}
 
 }
