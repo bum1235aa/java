@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en"xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -14,7 +14,7 @@
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-dark">
-        <a class="navbar-brand" href="#">Books review </a>
+        <a class="navbar-brand" href="/home">Books review </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -22,7 +22,7 @@
         <div class="collapse navbar-collapse " id="navbarSupportedContent">
             <ul class="navbar-nav">
                 <li class="nav-item active">
-                    <a class="nav-link" href="#">Trang chủ</a>
+                    <a class="nav-link" href="/home">Trang chủ</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">Sách</a>
@@ -60,22 +60,18 @@
                 <div class="card bg-light">
                     <div class="card-header">
                         <div class="card-title">
-                            <h2>Ten sach</h2>
+                            <h2 th:text="${book.getName()}">Ten sach</h2>
                         </div> 
                         
-                        <h5>Tac gia</h5>
-                        <h5>Nam Sang tac</h5>
+                        <h5 th:text="${book.getAuthorId()}" ></h5>
+                        <h5 th:text="${book.getReleadsedYear()}">Nam Sang tac</h5>
                         <h5>the loai</h5>
                         
                     </div>
                     <div class="card-body">
                         <div class="card-content">
-                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatum, aliquid molestiae quos veritatis dolorem aspernatur fugiat est! Dignissimos molestias voluptatibus, assumenda vel laborum iure quam ipsum eveniet amet similique atque.</p>
-                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatum, aliquid molestiae quos veritatis dolorem aspernatur fugiat est! Dignissimos molestias voluptatibus, assumenda vel laborum iure quam ipsum eveniet amet similique atque.</p>
-                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatum, aliquid molestiae quos veritatis dolorem aspernatur fugiat est! Dignissimos molestias voluptatibus, assumenda vel laborum iure quam ipsum eveniet amet similique atque.</p>
-                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatum, aliquid molestiae quos veritatis dolorem aspernatur fugiat est! Dignissimos molestias voluptatibus, assumenda vel laborum iure quam ipsum eveniet amet similique atque.</p>
-                        </div>
-                        
+                        	<th:block th:text="${book.getDesc()}"></th:block>    
+                        </div>                      
                     </div>
                 </div>
                 

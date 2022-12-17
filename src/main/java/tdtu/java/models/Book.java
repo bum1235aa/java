@@ -13,7 +13,7 @@ public class Book {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name="bookid")
-	private String id;
+	private int id;
 	
 	@Column(name="bookname")
 	private String name;
@@ -33,10 +33,10 @@ public class Book {
 	@Column(name="description")
 	private String desc;
 	
-	public String getId() {
+	public int getId() {
 		return id;
 	}
-	public void setId(String id) {
+	public void setId(int id) {
 		this.id = id;
 	}
 	public String getName() {
@@ -63,11 +63,11 @@ public class Book {
 	public void setLang(String lang) {
 		this.lang = lang;
 	}
-	public int getAuthor_id() {
+	public int getAuthorId() {
 		return authorId;
 	}
-	public void setAuthor_id(int author_id) {
-		this.authorId = author_id;
+	public void setAuthor_id(int authorId) {
+		this.authorId = authorId;
 	}
 	public String getDesc() {
 		return desc;

@@ -2,10 +2,10 @@ package tdtu.java.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -29,7 +29,7 @@ public class BookController {
 		return "home";
 	}
 	@PostMapping("/signin")
-	public String signin(@RequestParam(name="username") String username,@RequestParam(name="password") String password,Model model) {
+	public String signin(@RequestParam(name="username") String username,@RequestParam(name="password") String password,ModelMap model) {
 		String role = userService.getRoleFromLogin(username, password);
 		System.out.print(role);
 		if(role==null) {
@@ -39,7 +39,7 @@ public class BookController {
 			return "/admin/";
 		}
 		else{
-			model.addAttribute("user",userService.getUserByUsername(username));
+			model.put("user",userService.getUserByUsername(username));
 			return "redirect:/";
 		}
 	}
@@ -61,5 +61,12 @@ public class BookController {
 	@GetMapping("/register")
 	public String registerPage() {
 		return "register";
+	}
+	
+	@GetMapping("/book/{id}")
+	public String bookReview(@PathVariable int id,ModelMap model) {
+		System.out.print(id);
+		model.put("book",bookService.findById(id));
+		return "review";
 	}
 }
