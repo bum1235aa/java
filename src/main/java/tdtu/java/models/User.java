@@ -1,5 +1,6 @@
 package tdtu.java.models;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -10,6 +11,7 @@ import jakarta.persistence.Table;
 public class User {
 	@Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name="userid")
 	private int id;
 	private String number;
 	private String name;

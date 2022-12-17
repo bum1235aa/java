@@ -1,9 +1,10 @@
 package tdtu.java.models;
 
 public class Review {
+	
 	private int id;
 	private String title;
-	private double rate;
+	private float rate;
 	private String content;
 	public int getId() {
 		return id;
@@ -11,10 +12,10 @@ public class Review {
 	public void setId(int id) {
 		this.id = id;
 	}
-	public double getRate() {
+	public float getRate() {
 		return rate;
 	}
-	public void setRate(double rate) {
+	public void setRate(float rate) {
 		this.rate = rate;
 	}
 	public String getTitle() {
