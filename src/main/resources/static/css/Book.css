@@ -1,0 +1,25 @@
+
+.book-img > img{
+    max-height: 100%;
+    max-width: 100%;
+    margin: auto;
+    display:flex;
+}
+.book-img{
+    width: 100%;
+}
+h5{
+    font-size: 15px
+    
+}
+.card{
+    color: #fff;
+    background-color: rgba(0,0,0,0.5) !important;
+}
+.checked {
+    color: yellow;
+}
+.reviewer{
+    height: 64px;
+    width: 64px;
+}
